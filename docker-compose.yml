@@ -1,0 +1,68 @@
+﻿services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"      # Porta para RabbitMQ
+      - "15672:15672"    # Porta para a interface de administração do RabbitMQ
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USERNAME}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD}
+    networks:
+      - app-network
+
+  protocolconsumer:
+    image: ${DOCKER_REGISTRY-}protocolconsumer
+    build:
+      context: .
+      dockerfile: ProtocolConsumer/Dockerfile
+    environment:
+      RABBITMQ_HOSTNAME: ${RABBITMQ_HOSTNAME}
+      RABBITMQ_USERNAME: ${RABBITMQ_USERNAME}
+      RABBITMQ_PASSWORD: ${RABBITMQ_PASSWORD}
+      QUEUE_NAME: ${QUEUE_NAME}
+      DB_CONNECTION_STRING: "DataSource=/app/data/${DB_NAME}.db"
+    volumes:
+      - ./data:/app/data 
+    networks:
+      - app-network
+    depends_on:
+      - rabbitmq
+
+  protocolpublisher:
+    image: ${DOCKER_REGISTRY-}protocolpublisher
+    build:
+      context: .
+      dockerfile: ProtocolPublisher/Dockerfile
+    environment:
+      RABBITMQ_HOSTNAME: ${RABBITMQ_HOSTNAME}
+      RABBITMQ_USERNAME: ${RABBITMQ_USERNAME}
+      RABBITMQ_PASSWORD: ${RABBITMQ_PASSWORD}
+      QUEUE_NAME: ${QUEUE_NAME}
+    networks:
+      - app-network
+    depends_on:
+      - rabbitmq
+      - protocolconsumer
+
+  protocolapi:
+    image: ${DOCKER_REGISTRY-}protocolapi
+    build:
+      context: .
+      dockerfile: ProtocolAPI/Dockerfile
+    environment:
+      DB_CONNECTION_STRING: "DataSource=/app/data/${DB_NAME}.db"
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY}
+    volumes:
+      - ./data:/app/data 
+    ports:
+      - "5005:80"
+    networks:
+      - app-network
+    depends_on:
+      - rabbitmq
+      - protocolconsumer
+      - protocolpublisher
+
+networks:
+  app-network:
+    driver: bridge

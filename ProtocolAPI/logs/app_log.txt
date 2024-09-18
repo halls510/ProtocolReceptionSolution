@@ -1,0 +1,2 @@
+2024-09-18 13:13:02.232 +00:00 [INF] Iniciando aplicação ProtocolAPI
+2024-09-18 16:24:36.101 +00:00 [INF] Iniciando aplicação ProtocolAPI

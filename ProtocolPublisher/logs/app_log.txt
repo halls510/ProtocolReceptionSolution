@@ -1,0 +1,658 @@
+2024-09-18 12:51:32.289 +00:00 [INF] Iniciando aplicação ProtocolPublisher
+2024-09-18 12:51:33.209 +00:00 [ERR] Falha na conexão com RabbitMQ. Tentando novamente... 4 tentativas restantes.
+RabbitMQ.Client.Exceptions.BrokerUnreachableException: None of the specified endpoints were reachable
+ ---> System.AggregateException: One or more errors occurred. (Connection failed)
+ ---> RabbitMQ.Client.Exceptions.ConnectFailureException: Connection failed
+ ---> System.Net.Sockets.SocketException (111): Connection refused
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at RabbitMQ.Client.TcpClientAdapter.ConnectAsync(String host, Int32 port)
+   at RabbitMQ.Client.Impl.TaskExtensions.TimeoutAfter(Task task, TimeSpan timeout)
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectOrFail(ITcpClient socket, AmqpTcpEndpoint endpoint, TimeSpan timeout)
+   --- End of inner exception stack trace ---
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectOrFail(ITcpClient socket, AmqpTcpEndpoint endpoint, TimeSpan timeout)
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectUsingAddressFamily(AmqpTcpEndpoint endpoint, Func`2 socketFactory, TimeSpan timeout, AddressFamily family)
+   at RabbitMQ.Client.Impl.SocketFrameHandler..ctor(AmqpTcpEndpoint endpoint, Func`2 socketFactory, TimeSpan connectionTimeout, TimeSpan readTimeout, TimeSpan writeTimeout)
+   at RabbitMQ.Client.ConnectionFactory.CreateFrameHandler(AmqpTcpEndpoint endpoint)
+   at RabbitMQ.Client.EndpointResolverExtensions.SelectOne[T](IEndpointResolver resolver, Func`2 selector)
+   --- End of inner exception stack trace ---
+   at RabbitMQ.Client.EndpointResolverExtensions.SelectOne[T](IEndpointResolver resolver, Func`2 selector)
+   at RabbitMQ.Client.Framing.Impl.AutorecoveringConnection.Init(IEndpointResolver endpoints)
+   at RabbitMQ.Client.ConnectionFactory.CreateConnection(IEndpointResolver endpointResolver, String clientProvidedName)
+   --- End of inner exception stack trace ---
+   at RabbitMQ.Client.ConnectionFactory.CreateConnection(IEndpointResolver endpointResolver, String clientProvidedName)
+   at ProtocolPublisher.Services.ProtocolPublisherService.PublishProtocols(List`1 protocolos) in D:\source\repos\PROJETOS\protocolreceptionsolution\ProtocolPublisher\Services\ProtocolPublisherService.cs:line 30
+2024-09-18 12:51:38.419 +00:00 [INF] Protocolo enviado com sucesso: 00001
+2024-09-18 12:51:38.420 +00:00 [INF] Protocolo enviado com sucesso: 00106
+2024-09-18 12:51:38.420 +00:00 [INF] Protocolo enviado com sucesso: 00116
+2024-09-18 12:51:38.420 +00:00 [INF] Protocolo enviado com sucesso: 00002
+2024-09-18 12:51:38.420 +00:00 [INF] Protocolo enviado com sucesso: 00107
+2024-09-18 12:51:38.421 +00:00 [INF] Protocolo enviado com sucesso: 00117
+2024-09-18 12:51:38.421 +00:00 [INF] Protocolo enviado com sucesso: 00003
+2024-09-18 12:51:38.421 +00:00 [INF] Protocolo enviado com sucesso: 00108
+2024-09-18 12:51:38.422 +00:00 [INF] Protocolo enviado com sucesso: 00118
+2024-09-18 12:51:38.422 +00:00 [INF] Protocolo enviado com sucesso: 00004
+2024-09-18 12:51:38.422 +00:00 [INF] Protocolo enviado com sucesso: 00109
+2024-09-18 12:51:38.423 +00:00 [INF] Protocolo enviado com sucesso: 00119
+2024-09-18 12:51:38.423 +00:00 [INF] Protocolo enviado com sucesso: 00005
+2024-09-18 12:51:38.423 +00:00 [INF] Protocolo enviado com sucesso: 00110
+2024-09-18 12:51:38.424 +00:00 [INF] Protocolo enviado com sucesso: 00120
+2024-09-18 12:51:38.424 +00:00 [INF] Protocolo enviado com sucesso: 00006
+2024-09-18 12:51:38.424 +00:00 [INF] Protocolo enviado com sucesso: 00111
+2024-09-18 12:51:38.424 +00:00 [INF] Protocolo enviado com sucesso: 00121
+2024-09-18 12:51:38.425 +00:00 [INF] Protocolo enviado com sucesso: 00007
+2024-09-18 12:51:38.425 +00:00 [INF] Protocolo enviado com sucesso: 00112
+2024-09-18 12:51:38.425 +00:00 [INF] Protocolo enviado com sucesso: 00122
+2024-09-18 12:51:38.425 +00:00 [INF] Protocolo enviado com sucesso: 00008
+2024-09-18 12:51:38.426 +00:00 [INF] Protocolo enviado com sucesso: 00113
+2024-09-18 12:51:38.426 +00:00 [INF] Protocolo enviado com sucesso: 00123
+2024-09-18 12:51:38.426 +00:00 [INF] Protocolo enviado com sucesso: 00009
+2024-09-18 12:51:38.426 +00:00 [INF] Protocolo enviado com sucesso: 00114
+2024-09-18 12:51:38.427 +00:00 [INF] Protocolo enviado com sucesso: 00124
+2024-09-18 12:51:38.428 +00:00 [INF] Protocolo enviado com sucesso: 00010
+2024-09-18 12:51:38.428 +00:00 [INF] Protocolo enviado com sucesso: 00115
+2024-09-18 12:51:38.428 +00:00 [INF] Protocolo enviado com sucesso: 00125
+2024-09-18 12:51:38.428 +00:00 [INF] Protocolo enviado com sucesso: 00011
+2024-09-18 12:51:38.429 +00:00 [INF] Protocolo enviado com sucesso: 00012
+2024-09-18 12:51:38.429 +00:00 [INF] Protocolo enviado com sucesso: 00013
+2024-09-18 12:51:38.429 +00:00 [INF] Protocolo enviado com sucesso: 00014
+2024-09-18 12:51:38.429 +00:00 [INF] Protocolo enviado com sucesso: 00015
+2024-09-18 12:51:38.430 +00:00 [INF] Protocolo enviado com sucesso: 00016
+2024-09-18 12:51:38.430 +00:00 [INF] Protocolo enviado com sucesso: 00017
+2024-09-18 12:51:38.430 +00:00 [INF] Protocolo enviado com sucesso: 00018
+2024-09-18 12:51:38.430 +00:00 [INF] Protocolo enviado com sucesso: 00019
+2024-09-18 12:51:38.431 +00:00 [INF] Protocolo enviado com sucesso: 00020
+2024-09-18 12:51:38.431 +00:00 [INF] Protocolo enviado com sucesso: 00021
+2024-09-18 12:51:38.431 +00:00 [INF] Protocolo enviado com sucesso: 00022
+2024-09-18 12:51:38.431 +00:00 [INF] Protocolo enviado com sucesso: 00023
+2024-09-18 12:51:38.432 +00:00 [INF] Protocolo enviado com sucesso: 00024
+2024-09-18 12:51:38.432 +00:00 [INF] Protocolo enviado com sucesso: 00025
+2024-09-18 12:51:38.432 +00:00 [INF] Protocolo enviado com sucesso: 00026
+2024-09-18 12:51:38.433 +00:00 [INF] Protocolo enviado com sucesso: 00027
+2024-09-18 12:51:38.433 +00:00 [INF] Protocolo enviado com sucesso: 00028
+2024-09-18 12:51:38.433 +00:00 [INF] Protocolo enviado com sucesso: 00029
+2024-09-18 12:51:38.433 +00:00 [INF] Protocolo enviado com sucesso: 00030
+2024-09-18 12:51:38.434 +00:00 [INF] Protocolo enviado com sucesso: 00031
+2024-09-18 12:51:38.434 +00:00 [INF] Protocolo enviado com sucesso: 00032
+2024-09-18 12:51:38.434 +00:00 [INF] Protocolo enviado com sucesso: 00033
+2024-09-18 12:51:38.434 +00:00 [INF] Protocolo enviado com sucesso: 00034
+2024-09-18 12:51:38.434 +00:00 [INF] Protocolo enviado com sucesso: 00035
+2024-09-18 12:51:38.435 +00:00 [INF] Protocolo enviado com sucesso: 00036
+2024-09-18 12:51:38.435 +00:00 [INF] Protocolo enviado com sucesso: 00037
+2024-09-18 12:51:38.435 +00:00 [INF] Protocolo enviado com sucesso: 00038
+2024-09-18 12:51:38.435 +00:00 [INF] Protocolo enviado com sucesso: 00039
+2024-09-18 12:51:38.436 +00:00 [INF] Protocolo enviado com sucesso: 00040
+2024-09-18 12:51:38.436 +00:00 [INF] Protocolo enviado com sucesso: 00041
+2024-09-18 12:51:38.436 +00:00 [INF] Protocolo enviado com sucesso: 00042
+2024-09-18 12:51:38.437 +00:00 [INF] Protocolo enviado com sucesso: 00043
+2024-09-18 12:51:38.437 +00:00 [INF] Protocolo enviado com sucesso: 00044
+2024-09-18 12:51:38.437 +00:00 [INF] Protocolo enviado com sucesso: 00045
+2024-09-18 12:51:38.437 +00:00 [INF] Protocolo enviado com sucesso: 00046
+2024-09-18 12:51:38.438 +00:00 [INF] Protocolo enviado com sucesso: 00047
+2024-09-18 12:51:38.438 +00:00 [INF] Protocolo enviado com sucesso: 00048
+2024-09-18 12:51:38.438 +00:00 [INF] Protocolo enviado com sucesso: 00049
+2024-09-18 12:51:38.438 +00:00 [INF] Protocolo enviado com sucesso: 00050
+2024-09-18 12:51:38.439 +00:00 [INF] Protocolo enviado com sucesso: 00051
+2024-09-18 12:51:38.439 +00:00 [INF] Protocolo enviado com sucesso: 00052
+2024-09-18 12:51:38.439 +00:00 [INF] Protocolo enviado com sucesso: 00053
+2024-09-18 12:51:38.439 +00:00 [INF] Protocolo enviado com sucesso: 00054
+2024-09-18 12:51:38.440 +00:00 [INF] Protocolo enviado com sucesso: 00055
+2024-09-18 12:51:38.440 +00:00 [INF] Protocolo enviado com sucesso: 00056
+2024-09-18 12:51:38.440 +00:00 [INF] Protocolo enviado com sucesso: 00057
+2024-09-18 12:51:38.441 +00:00 [INF] Protocolo enviado com sucesso: 00058
+2024-09-18 12:51:38.441 +00:00 [INF] Protocolo enviado com sucesso: 00059
+2024-09-18 12:51:38.441 +00:00 [INF] Protocolo enviado com sucesso: 00060
+2024-09-18 12:51:38.441 +00:00 [INF] Protocolo enviado com sucesso: 00061
+2024-09-18 12:51:38.442 +00:00 [INF] Protocolo enviado com sucesso: 00062
+2024-09-18 12:51:38.442 +00:00 [INF] Protocolo enviado com sucesso: 00063
+2024-09-18 12:51:38.442 +00:00 [INF] Protocolo enviado com sucesso: 00064
+2024-09-18 12:51:38.443 +00:00 [INF] Protocolo enviado com sucesso: 00065
+2024-09-18 12:51:38.443 +00:00 [INF] Protocolo enviado com sucesso: 00066
+2024-09-18 12:51:38.443 +00:00 [INF] Protocolo enviado com sucesso: 00067
+2024-09-18 12:51:38.444 +00:00 [INF] Protocolo enviado com sucesso: 00068
+2024-09-18 12:51:38.444 +00:00 [INF] Protocolo enviado com sucesso: 00069
+2024-09-18 12:51:38.444 +00:00 [INF] Protocolo enviado com sucesso: 00070
+2024-09-18 12:51:38.445 +00:00 [INF] Protocolo enviado com sucesso: 00071
+2024-09-18 12:51:38.445 +00:00 [INF] Protocolo enviado com sucesso: 00072
+2024-09-18 12:51:38.445 +00:00 [INF] Protocolo enviado com sucesso: 00073
+2024-09-18 12:51:38.445 +00:00 [INF] Protocolo enviado com sucesso: 00074
+2024-09-18 12:51:38.446 +00:00 [INF] Protocolo enviado com sucesso: 00075
+2024-09-18 12:51:38.446 +00:00 [INF] Protocolo enviado com sucesso: 00076
+2024-09-18 12:51:38.446 +00:00 [INF] Protocolo enviado com sucesso: 00077
+2024-09-18 12:51:38.446 +00:00 [INF] Protocolo enviado com sucesso: 00078
+2024-09-18 12:51:38.447 +00:00 [INF] Protocolo enviado com sucesso: 00079
+2024-09-18 12:51:38.447 +00:00 [INF] Protocolo enviado com sucesso: 00080
+2024-09-18 12:51:38.447 +00:00 [INF] Protocolo enviado com sucesso: 00081
+2024-09-18 12:51:38.447 +00:00 [INF] Protocolo enviado com sucesso: 00082
+2024-09-18 12:51:38.448 +00:00 [INF] Protocolo enviado com sucesso: 00083
+2024-09-18 12:51:38.448 +00:00 [INF] Protocolo enviado com sucesso: 00084
+2024-09-18 12:51:38.448 +00:00 [INF] Protocolo enviado com sucesso: 00085
+2024-09-18 12:51:38.448 +00:00 [INF] Protocolo enviado com sucesso: 00086
+2024-09-18 12:51:38.449 +00:00 [INF] Protocolo enviado com sucesso: 00087
+2024-09-18 12:51:38.449 +00:00 [INF] Protocolo enviado com sucesso: 00088
+2024-09-18 12:51:38.449 +00:00 [INF] Protocolo enviado com sucesso: 00089
+2024-09-18 12:51:38.450 +00:00 [INF] Protocolo enviado com sucesso: 00090
+2024-09-18 12:51:38.450 +00:00 [INF] Protocolo enviado com sucesso: 00001
+2024-09-18 12:51:38.450 +00:00 [INF] Protocolo enviado com sucesso: 00001
+2024-09-18 12:51:38.450 +00:00 [INF] Protocolo enviado com sucesso: 00001
+2024-09-18 12:51:38.451 +00:00 [INF] Protocolo enviado com sucesso: 00001
+2024-09-18 12:51:38.451 +00:00 [INF] Protocolo enviado com sucesso: 00001
+2024-09-18 12:51:38.451 +00:00 [INF] Protocolo enviado com sucesso: 00096
+2024-09-18 12:51:38.452 +00:00 [INF] Protocolo enviado com sucesso: 00097
+2024-09-18 12:51:38.452 +00:00 [INF] Protocolo enviado com sucesso: 00098
+2024-09-18 12:51:38.452 +00:00 [INF] Protocolo enviado com sucesso: 00099
+2024-09-18 12:51:38.452 +00:00 [INF] Protocolo enviado com sucesso: 00100
+2024-09-18 12:51:38.453 +00:00 [INF] Protocolo enviado com sucesso: 00101
+2024-09-18 12:51:38.453 +00:00 [INF] Protocolo enviado com sucesso: 00102
+2024-09-18 12:51:38.453 +00:00 [INF] Protocolo enviado com sucesso: 00103
+2024-09-18 12:51:38.454 +00:00 [INF] Protocolo enviado com sucesso: 00103
+2024-09-18 12:51:38.454 +00:00 [INF] Protocolo enviado com sucesso: 00104
+2024-09-18 12:51:38.454 +00:00 [INF] Protocolo enviado com sucesso: 00105
+2024-09-18 13:05:17.662 +00:00 [INF] Iniciando aplicação ProtocolPublisher
+2024-09-18 13:05:20.502 +00:00 [ERR] Falha na conexão com RabbitMQ. Tentando novamente... 4 tentativas restantes.
+RabbitMQ.Client.Exceptions.BrokerUnreachableException: None of the specified endpoints were reachable
+ ---> System.AggregateException: One or more errors occurred. (Connection failed)
+ ---> RabbitMQ.Client.Exceptions.ConnectFailureException: Connection failed
+ ---> System.Net.Sockets.SocketException (111): Connection refused
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at RabbitMQ.Client.TcpClientAdapter.ConnectAsync(String host, Int32 port)
+   at RabbitMQ.Client.Impl.TaskExtensions.TimeoutAfter(Task task, TimeSpan timeout)
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectOrFail(ITcpClient socket, AmqpTcpEndpoint endpoint, TimeSpan timeout)
+   --- End of inner exception stack trace ---
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectOrFail(ITcpClient socket, AmqpTcpEndpoint endpoint, TimeSpan timeout)
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectUsingAddressFamily(AmqpTcpEndpoint endpoint, Func`2 socketFactory, TimeSpan timeout, AddressFamily family)
+   at RabbitMQ.Client.Impl.SocketFrameHandler..ctor(AmqpTcpEndpoint endpoint, Func`2 socketFactory, TimeSpan connectionTimeout, TimeSpan readTimeout, TimeSpan writeTimeout)
+   at RabbitMQ.Client.ConnectionFactory.CreateFrameHandler(AmqpTcpEndpoint endpoint)
+   at RabbitMQ.Client.EndpointResolverExtensions.SelectOne[T](IEndpointResolver resolver, Func`2 selector)
+   --- End of inner exception stack trace ---
+   at RabbitMQ.Client.EndpointResolverExtensions.SelectOne[T](IEndpointResolver resolver, Func`2 selector)
+   at RabbitMQ.Client.Framing.Impl.AutorecoveringConnection.Init(IEndpointResolver endpoints)
+   at RabbitMQ.Client.ConnectionFactory.CreateConnection(IEndpointResolver endpointResolver, String clientProvidedName)
+   --- End of inner exception stack trace ---
+   at RabbitMQ.Client.ConnectionFactory.CreateConnection(IEndpointResolver endpointResolver, String clientProvidedName)
+   at ProtocolPublisher.Services.ProtocolPublisherService.PublishProtocols(List`1 protocolos) in D:\source\repos\PROJETOS\protocolreceptionsolution\ProtocolPublisher\Services\ProtocolPublisherService.cs:line 30
+2024-09-18 13:05:25.746 +00:00 [INF] Protocolo enviado com sucesso: 00001
+2024-09-18 13:05:25.747 +00:00 [INF] Protocolo enviado com sucesso: 00106
+2024-09-18 13:05:25.747 +00:00 [INF] Protocolo enviado com sucesso: 00116
+2024-09-18 13:05:25.751 +00:00 [INF] Protocolo enviado com sucesso: 00002
+2024-09-18 13:05:25.751 +00:00 [INF] Protocolo enviado com sucesso: 00107
+2024-09-18 13:05:25.752 +00:00 [INF] Protocolo enviado com sucesso: 00117
+2024-09-18 13:05:25.752 +00:00 [INF] Protocolo enviado com sucesso: 00003
+2024-09-18 13:05:25.752 +00:00 [INF] Protocolo enviado com sucesso: 00108
+2024-09-18 13:05:25.753 +00:00 [INF] Protocolo enviado com sucesso: 00118
+2024-09-18 13:05:25.753 +00:00 [INF] Protocolo enviado com sucesso: 00004
+2024-09-18 13:05:25.753 +00:00 [INF] Protocolo enviado com sucesso: 00109
+2024-09-18 13:05:25.753 +00:00 [INF] Protocolo enviado com sucesso: 00119
+2024-09-18 13:05:25.754 +00:00 [INF] Protocolo enviado com sucesso: 00005
+2024-09-18 13:05:25.754 +00:00 [INF] Protocolo enviado com sucesso: 00110
+2024-09-18 13:05:25.754 +00:00 [INF] Protocolo enviado com sucesso: 00120
+2024-09-18 13:05:25.755 +00:00 [INF] Protocolo enviado com sucesso: 00006
+2024-09-18 13:05:25.755 +00:00 [INF] Protocolo enviado com sucesso: 00111
+2024-09-18 13:05:25.755 +00:00 [INF] Protocolo enviado com sucesso: 00121
+2024-09-18 13:05:25.756 +00:00 [INF] Protocolo enviado com sucesso: 00007
+2024-09-18 13:05:25.756 +00:00 [INF] Protocolo enviado com sucesso: 00112
+2024-09-18 13:05:25.756 +00:00 [INF] Protocolo enviado com sucesso: 00122
+2024-09-18 13:05:25.756 +00:00 [INF] Protocolo enviado com sucesso: 00008
+2024-09-18 13:05:25.757 +00:00 [INF] Protocolo enviado com sucesso: 00113
+2024-09-18 13:05:25.757 +00:00 [INF] Protocolo enviado com sucesso: 00123
+2024-09-18 13:05:25.757 +00:00 [INF] Protocolo enviado com sucesso: 00009
+2024-09-18 13:05:25.757 +00:00 [INF] Protocolo enviado com sucesso: 00114
+2024-09-18 13:05:25.758 +00:00 [INF] Protocolo enviado com sucesso: 00124
+2024-09-18 13:05:25.759 +00:00 [INF] Protocolo enviado com sucesso: 00010
+2024-09-18 13:05:25.759 +00:00 [INF] Protocolo enviado com sucesso: 00115
+2024-09-18 13:05:25.759 +00:00 [INF] Protocolo enviado com sucesso: 00125
+2024-09-18 13:05:25.759 +00:00 [INF] Protocolo enviado com sucesso: 00011
+2024-09-18 13:05:25.760 +00:00 [INF] Protocolo enviado com sucesso: 00012
+2024-09-18 13:05:25.760 +00:00 [INF] Protocolo enviado com sucesso: 00013
+2024-09-18 13:05:25.760 +00:00 [INF] Protocolo enviado com sucesso: 00014
+2024-09-18 13:05:25.760 +00:00 [INF] Protocolo enviado com sucesso: 00015
+2024-09-18 13:05:25.760 +00:00 [INF] Protocolo enviado com sucesso: 00016
+2024-09-18 13:05:25.761 +00:00 [INF] Protocolo enviado com sucesso: 00017
+2024-09-18 13:05:25.761 +00:00 [INF] Protocolo enviado com sucesso: 00018
+2024-09-18 13:05:25.761 +00:00 [INF] Protocolo enviado com sucesso: 00019
+2024-09-18 13:05:25.762 +00:00 [INF] Protocolo enviado com sucesso: 00020
+2024-09-18 13:05:25.762 +00:00 [INF] Protocolo enviado com sucesso: 00021
+2024-09-18 13:05:25.762 +00:00 [INF] Protocolo enviado com sucesso: 00022
+2024-09-18 13:05:25.762 +00:00 [INF] Protocolo enviado com sucesso: 00023
+2024-09-18 13:05:25.763 +00:00 [INF] Protocolo enviado com sucesso: 00024
+2024-09-18 13:05:25.763 +00:00 [INF] Protocolo enviado com sucesso: 00025
+2024-09-18 13:05:25.764 +00:00 [INF] Protocolo enviado com sucesso: 00026
+2024-09-18 13:05:25.764 +00:00 [INF] Protocolo enviado com sucesso: 00027
+2024-09-18 13:05:25.764 +00:00 [INF] Protocolo enviado com sucesso: 00028
+2024-09-18 13:05:25.765 +00:00 [INF] Protocolo enviado com sucesso: 00029
+2024-09-18 13:05:25.765 +00:00 [INF] Protocolo enviado com sucesso: 00030
+2024-09-18 13:05:25.765 +00:00 [INF] Protocolo enviado com sucesso: 00031
+2024-09-18 13:05:25.765 +00:00 [INF] Protocolo enviado com sucesso: 00032
+2024-09-18 13:05:25.766 +00:00 [INF] Protocolo enviado com sucesso: 00033
+2024-09-18 13:05:25.766 +00:00 [INF] Protocolo enviado com sucesso: 00034
+2024-09-18 13:05:25.766 +00:00 [INF] Protocolo enviado com sucesso: 00035
+2024-09-18 13:05:25.767 +00:00 [INF] Protocolo enviado com sucesso: 00036
+2024-09-18 13:05:25.767 +00:00 [INF] Protocolo enviado com sucesso: 00037
+2024-09-18 13:05:25.767 +00:00 [INF] Protocolo enviado com sucesso: 00038
+2024-09-18 13:05:25.767 +00:00 [INF] Protocolo enviado com sucesso: 00039
+2024-09-18 13:05:25.768 +00:00 [INF] Protocolo enviado com sucesso: 00040
+2024-09-18 13:05:25.768 +00:00 [INF] Protocolo enviado com sucesso: 00041
+2024-09-18 13:05:25.768 +00:00 [INF] Protocolo enviado com sucesso: 00042
+2024-09-18 13:05:25.768 +00:00 [INF] Protocolo enviado com sucesso: 00043
+2024-09-18 13:05:25.769 +00:00 [INF] Protocolo enviado com sucesso: 00044
+2024-09-18 13:05:25.769 +00:00 [INF] Protocolo enviado com sucesso: 00045
+2024-09-18 13:05:25.769 +00:00 [INF] Protocolo enviado com sucesso: 00046
+2024-09-18 13:05:25.769 +00:00 [INF] Protocolo enviado com sucesso: 00047
+2024-09-18 13:05:25.770 +00:00 [INF] Protocolo enviado com sucesso: 00048
+2024-09-18 13:05:25.770 +00:00 [INF] Protocolo enviado com sucesso: 00049
+2024-09-18 13:05:25.770 +00:00 [INF] Protocolo enviado com sucesso: 00050
+2024-09-18 13:05:25.770 +00:00 [INF] Protocolo enviado com sucesso: 00051
+2024-09-18 13:05:25.771 +00:00 [INF] Protocolo enviado com sucesso: 00052
+2024-09-18 13:05:25.771 +00:00 [INF] Protocolo enviado com sucesso: 00053
+2024-09-18 13:05:25.771 +00:00 [INF] Protocolo enviado com sucesso: 00054
+2024-09-18 13:05:25.771 +00:00 [INF] Protocolo enviado com sucesso: 00055
+2024-09-18 13:05:25.772 +00:00 [INF] Protocolo enviado com sucesso: 00056
+2024-09-18 13:05:25.772 +00:00 [INF] Protocolo enviado com sucesso: 00057
+2024-09-18 13:05:25.772 +00:00 [INF] Protocolo enviado com sucesso: 00058
+2024-09-18 13:05:25.773 +00:00 [INF] Protocolo enviado com sucesso: 00059
+2024-09-18 13:05:25.773 +00:00 [INF] Protocolo enviado com sucesso: 00060
+2024-09-18 13:05:25.773 +00:00 [INF] Protocolo enviado com sucesso: 00061
+2024-09-18 13:05:25.773 +00:00 [INF] Protocolo enviado com sucesso: 00062
+2024-09-18 13:05:25.774 +00:00 [INF] Protocolo enviado com sucesso: 00063
+2024-09-18 13:05:25.774 +00:00 [INF] Protocolo enviado com sucesso: 00064
+2024-09-18 13:05:25.774 +00:00 [INF] Protocolo enviado com sucesso: 00065
+2024-09-18 13:05:25.774 +00:00 [INF] Protocolo enviado com sucesso: 00066
+2024-09-18 13:05:25.775 +00:00 [INF] Protocolo enviado com sucesso: 00067
+2024-09-18 13:05:25.775 +00:00 [INF] Protocolo enviado com sucesso: 00068
+2024-09-18 13:05:25.775 +00:00 [INF] Protocolo enviado com sucesso: 00069
+2024-09-18 13:05:25.776 +00:00 [INF] Protocolo enviado com sucesso: 00070
+2024-09-18 13:05:25.776 +00:00 [INF] Protocolo enviado com sucesso: 00071
+2024-09-18 13:05:25.776 +00:00 [INF] Protocolo enviado com sucesso: 00072
+2024-09-18 13:05:25.776 +00:00 [INF] Protocolo enviado com sucesso: 00073
+2024-09-18 13:05:25.777 +00:00 [INF] Protocolo enviado com sucesso: 00074
+2024-09-18 13:05:25.777 +00:00 [INF] Protocolo enviado com sucesso: 00075
+2024-09-18 13:05:25.777 +00:00 [INF] Protocolo enviado com sucesso: 00076
+2024-09-18 13:05:25.777 +00:00 [INF] Protocolo enviado com sucesso: 00077
+2024-09-18 13:05:25.778 +00:00 [INF] Protocolo enviado com sucesso: 00078
+2024-09-18 13:05:25.778 +00:00 [INF] Protocolo enviado com sucesso: 00079
+2024-09-18 13:05:25.778 +00:00 [INF] Protocolo enviado com sucesso: 00080
+2024-09-18 13:05:25.779 +00:00 [INF] Protocolo enviado com sucesso: 00081
+2024-09-18 13:05:25.779 +00:00 [INF] Protocolo enviado com sucesso: 00082
+2024-09-18 13:05:25.779 +00:00 [INF] Protocolo enviado com sucesso: 00083
+2024-09-18 13:05:25.779 +00:00 [INF] Protocolo enviado com sucesso: 00084
+2024-09-18 13:05:25.780 +00:00 [INF] Protocolo enviado com sucesso: 00085
+2024-09-18 13:05:25.780 +00:00 [INF] Protocolo enviado com sucesso: 00086
+2024-09-18 13:05:25.780 +00:00 [INF] Protocolo enviado com sucesso: 00087
+2024-09-18 13:05:25.780 +00:00 [INF] Protocolo enviado com sucesso: 00088
+2024-09-18 13:05:25.781 +00:00 [INF] Protocolo enviado com sucesso: 00089
+2024-09-18 13:05:25.781 +00:00 [INF] Protocolo enviado com sucesso: 00090
+2024-09-18 13:05:25.781 +00:00 [INF] Protocolo enviado com sucesso: 00001
+2024-09-18 13:05:25.781 +00:00 [INF] Protocolo enviado com sucesso: 00001
+2024-09-18 13:05:25.781 +00:00 [INF] Protocolo enviado com sucesso: 00001
+2024-09-18 13:05:25.782 +00:00 [INF] Protocolo enviado com sucesso: 00001
+2024-09-18 13:05:25.782 +00:00 [INF] Protocolo enviado com sucesso: 00001
+2024-09-18 13:05:25.782 +00:00 [INF] Protocolo enviado com sucesso: 00096
+2024-09-18 13:05:25.782 +00:00 [INF] Protocolo enviado com sucesso: 00097
+2024-09-18 13:05:25.783 +00:00 [INF] Protocolo enviado com sucesso: 00098
+2024-09-18 13:05:25.783 +00:00 [INF] Protocolo enviado com sucesso: 00099
+2024-09-18 13:05:25.783 +00:00 [INF] Protocolo enviado com sucesso: 00100
+2024-09-18 13:05:25.783 +00:00 [INF] Protocolo enviado com sucesso: 00101
+2024-09-18 13:05:25.784 +00:00 [INF] Protocolo enviado com sucesso: 00102
+2024-09-18 13:05:25.784 +00:00 [INF] Protocolo enviado com sucesso: 00103
+2024-09-18 13:05:25.784 +00:00 [INF] Protocolo enviado com sucesso: 00103
+2024-09-18 13:05:25.785 +00:00 [INF] Protocolo enviado com sucesso: 00104
+2024-09-18 13:05:25.785 +00:00 [INF] Protocolo enviado com sucesso: 00105
+2024-09-18 13:13:01.584 +00:00 [INF] Iniciando aplicação ProtocolPublisher
+2024-09-18 13:13:02.372 +00:00 [ERR] Falha na conexão com RabbitMQ. Tentando novamente... 4 tentativas restantes.
+RabbitMQ.Client.Exceptions.BrokerUnreachableException: None of the specified endpoints were reachable
+ ---> System.AggregateException: One or more errors occurred. (Connection failed)
+ ---> RabbitMQ.Client.Exceptions.ConnectFailureException: Connection failed
+ ---> System.Net.Sockets.SocketException (111): Connection refused
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at RabbitMQ.Client.TcpClientAdapter.ConnectAsync(String host, Int32 port)
+   at RabbitMQ.Client.Impl.TaskExtensions.TimeoutAfter(Task task, TimeSpan timeout)
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectOrFail(ITcpClient socket, AmqpTcpEndpoint endpoint, TimeSpan timeout)
+   --- End of inner exception stack trace ---
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectOrFail(ITcpClient socket, AmqpTcpEndpoint endpoint, TimeSpan timeout)
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectUsingAddressFamily(AmqpTcpEndpoint endpoint, Func`2 socketFactory, TimeSpan timeout, AddressFamily family)
+   at RabbitMQ.Client.Impl.SocketFrameHandler..ctor(AmqpTcpEndpoint endpoint, Func`2 socketFactory, TimeSpan connectionTimeout, TimeSpan readTimeout, TimeSpan writeTimeout)
+   at RabbitMQ.Client.ConnectionFactory.CreateFrameHandler(AmqpTcpEndpoint endpoint)
+   at RabbitMQ.Client.EndpointResolverExtensions.SelectOne[T](IEndpointResolver resolver, Func`2 selector)
+   --- End of inner exception stack trace ---
+   at RabbitMQ.Client.EndpointResolverExtensions.SelectOne[T](IEndpointResolver resolver, Func`2 selector)
+   at RabbitMQ.Client.Framing.Impl.AutorecoveringConnection.Init(IEndpointResolver endpoints)
+   at RabbitMQ.Client.ConnectionFactory.CreateConnection(IEndpointResolver endpointResolver, String clientProvidedName)
+   --- End of inner exception stack trace ---
+   at RabbitMQ.Client.ConnectionFactory.CreateConnection(IEndpointResolver endpointResolver, String clientProvidedName)
+   at ProtocolPublisher.Services.ProtocolPublisherService.PublishProtocols(List`1 protocolos) in D:\source\repos\PROJETOS\protocolreceptionsolution\ProtocolPublisher\Services\ProtocolPublisherService.cs:line 30
+2024-09-18 13:13:07.597 +00:00 [INF] Protocolo enviado com sucesso: 00001
+2024-09-18 13:13:07.597 +00:00 [INF] Protocolo enviado com sucesso: 00106
+2024-09-18 13:13:07.598 +00:00 [INF] Protocolo enviado com sucesso: 00116
+2024-09-18 13:13:07.601 +00:00 [INF] Protocolo enviado com sucesso: 00002
+2024-09-18 13:13:07.602 +00:00 [INF] Protocolo enviado com sucesso: 00107
+2024-09-18 13:13:07.602 +00:00 [INF] Protocolo enviado com sucesso: 00117
+2024-09-18 13:13:07.602 +00:00 [INF] Protocolo enviado com sucesso: 00003
+2024-09-18 13:13:07.602 +00:00 [INF] Protocolo enviado com sucesso: 00108
+2024-09-18 13:13:07.603 +00:00 [INF] Protocolo enviado com sucesso: 00118
+2024-09-18 13:13:07.603 +00:00 [INF] Protocolo enviado com sucesso: 00004
+2024-09-18 13:13:07.603 +00:00 [INF] Protocolo enviado com sucesso: 00109
+2024-09-18 13:13:07.604 +00:00 [INF] Protocolo enviado com sucesso: 00119
+2024-09-18 13:13:07.604 +00:00 [INF] Protocolo enviado com sucesso: 00005
+2024-09-18 13:13:07.604 +00:00 [INF] Protocolo enviado com sucesso: 00110
+2024-09-18 13:13:07.604 +00:00 [INF] Protocolo enviado com sucesso: 00120
+2024-09-18 13:13:07.605 +00:00 [INF] Protocolo enviado com sucesso: 00006
+2024-09-18 13:13:07.605 +00:00 [INF] Protocolo enviado com sucesso: 00111
+2024-09-18 13:13:07.605 +00:00 [INF] Protocolo enviado com sucesso: 00121
+2024-09-18 13:13:07.605 +00:00 [INF] Protocolo enviado com sucesso: 00007
+2024-09-18 13:13:07.606 +00:00 [INF] Protocolo enviado com sucesso: 00112
+2024-09-18 13:13:07.606 +00:00 [INF] Protocolo enviado com sucesso: 00122
+2024-09-18 13:13:07.606 +00:00 [INF] Protocolo enviado com sucesso: 00008
+2024-09-18 13:13:07.606 +00:00 [INF] Protocolo enviado com sucesso: 00113
+2024-09-18 13:13:07.607 +00:00 [INF] Protocolo enviado com sucesso: 00123
+2024-09-18 13:13:07.607 +00:00 [INF] Protocolo enviado com sucesso: 00009
+2024-09-18 13:13:07.607 +00:00 [INF] Protocolo enviado com sucesso: 00114
+2024-09-18 13:13:07.608 +00:00 [INF] Protocolo enviado com sucesso: 00124
+2024-09-18 13:13:07.608 +00:00 [INF] Protocolo enviado com sucesso: 00010
+2024-09-18 13:13:07.609 +00:00 [INF] Protocolo enviado com sucesso: 00115
+2024-09-18 13:13:07.609 +00:00 [INF] Protocolo enviado com sucesso: 00125
+2024-09-18 13:13:07.609 +00:00 [INF] Protocolo enviado com sucesso: 00011
+2024-09-18 13:13:07.609 +00:00 [INF] Protocolo enviado com sucesso: 00012
+2024-09-18 13:13:07.610 +00:00 [INF] Protocolo enviado com sucesso: 00013
+2024-09-18 13:13:07.610 +00:00 [INF] Protocolo enviado com sucesso: 00014
+2024-09-18 13:13:07.610 +00:00 [INF] Protocolo enviado com sucesso: 00015
+2024-09-18 13:13:07.610 +00:00 [INF] Protocolo enviado com sucesso: 00016
+2024-09-18 13:13:07.611 +00:00 [INF] Protocolo enviado com sucesso: 00017
+2024-09-18 13:13:07.611 +00:00 [INF] Protocolo enviado com sucesso: 00018
+2024-09-18 13:13:07.611 +00:00 [INF] Protocolo enviado com sucesso: 00019
+2024-09-18 13:13:07.611 +00:00 [INF] Protocolo enviado com sucesso: 00020
+2024-09-18 13:13:07.612 +00:00 [INF] Protocolo enviado com sucesso: 00021
+2024-09-18 13:13:07.612 +00:00 [INF] Protocolo enviado com sucesso: 00022
+2024-09-18 13:13:07.612 +00:00 [INF] Protocolo enviado com sucesso: 00023
+2024-09-18 13:13:07.612 +00:00 [INF] Protocolo enviado com sucesso: 00024
+2024-09-18 13:13:07.613 +00:00 [INF] Protocolo enviado com sucesso: 00025
+2024-09-18 13:13:07.613 +00:00 [INF] Protocolo enviado com sucesso: 00026
+2024-09-18 13:13:07.613 +00:00 [INF] Protocolo enviado com sucesso: 00027
+2024-09-18 13:13:07.614 +00:00 [INF] Protocolo enviado com sucesso: 00028
+2024-09-18 13:13:07.614 +00:00 [INF] Protocolo enviado com sucesso: 00029
+2024-09-18 13:13:07.614 +00:00 [INF] Protocolo enviado com sucesso: 00030
+2024-09-18 13:13:07.614 +00:00 [INF] Protocolo enviado com sucesso: 00031
+2024-09-18 13:13:07.615 +00:00 [INF] Protocolo enviado com sucesso: 00032
+2024-09-18 13:13:07.615 +00:00 [INF] Protocolo enviado com sucesso: 00033
+2024-09-18 13:13:07.615 +00:00 [INF] Protocolo enviado com sucesso: 00034
+2024-09-18 13:13:07.615 +00:00 [INF] Protocolo enviado com sucesso: 00035
+2024-09-18 13:13:07.616 +00:00 [INF] Protocolo enviado com sucesso: 00036
+2024-09-18 13:13:07.616 +00:00 [INF] Protocolo enviado com sucesso: 00037
+2024-09-18 13:13:07.616 +00:00 [INF] Protocolo enviado com sucesso: 00038
+2024-09-18 13:13:07.617 +00:00 [INF] Protocolo enviado com sucesso: 00039
+2024-09-18 13:13:07.617 +00:00 [INF] Protocolo enviado com sucesso: 00040
+2024-09-18 13:13:07.617 +00:00 [INF] Protocolo enviado com sucesso: 00041
+2024-09-18 13:13:07.617 +00:00 [INF] Protocolo enviado com sucesso: 00042
+2024-09-18 13:13:07.617 +00:00 [INF] Protocolo enviado com sucesso: 00043
+2024-09-18 13:13:07.618 +00:00 [INF] Protocolo enviado com sucesso: 00044
+2024-09-18 13:13:07.618 +00:00 [INF] Protocolo enviado com sucesso: 00045
+2024-09-18 13:13:07.618 +00:00 [INF] Protocolo enviado com sucesso: 00046
+2024-09-18 13:13:07.618 +00:00 [INF] Protocolo enviado com sucesso: 00047
+2024-09-18 13:13:07.619 +00:00 [INF] Protocolo enviado com sucesso: 00048
+2024-09-18 13:13:07.619 +00:00 [INF] Protocolo enviado com sucesso: 00049
+2024-09-18 13:13:07.619 +00:00 [INF] Protocolo enviado com sucesso: 00050
+2024-09-18 13:13:07.620 +00:00 [INF] Protocolo enviado com sucesso: 00051
+2024-09-18 13:13:07.620 +00:00 [INF] Protocolo enviado com sucesso: 00052
+2024-09-18 13:13:07.620 +00:00 [INF] Protocolo enviado com sucesso: 00053
+2024-09-18 13:13:07.620 +00:00 [INF] Protocolo enviado com sucesso: 00054
+2024-09-18 13:13:07.621 +00:00 [INF] Protocolo enviado com sucesso: 00055
+2024-09-18 13:13:07.621 +00:00 [INF] Protocolo enviado com sucesso: 00056
+2024-09-18 13:13:07.621 +00:00 [INF] Protocolo enviado com sucesso: 00057
+2024-09-18 13:13:07.622 +00:00 [INF] Protocolo enviado com sucesso: 00058
+2024-09-18 13:13:07.622 +00:00 [INF] Protocolo enviado com sucesso: 00059
+2024-09-18 13:13:07.622 +00:00 [INF] Protocolo enviado com sucesso: 00060
+2024-09-18 13:13:07.623 +00:00 [INF] Protocolo enviado com sucesso: 00061
+2024-09-18 13:13:07.623 +00:00 [INF] Protocolo enviado com sucesso: 00062
+2024-09-18 13:13:07.624 +00:00 [INF] Protocolo enviado com sucesso: 00063
+2024-09-18 13:13:07.624 +00:00 [INF] Protocolo enviado com sucesso: 00064
+2024-09-18 13:13:07.624 +00:00 [INF] Protocolo enviado com sucesso: 00065
+2024-09-18 13:13:07.625 +00:00 [INF] Protocolo enviado com sucesso: 00066
+2024-09-18 13:13:07.625 +00:00 [INF] Protocolo enviado com sucesso: 00067
+2024-09-18 13:13:07.625 +00:00 [INF] Protocolo enviado com sucesso: 00068
+2024-09-18 13:13:07.626 +00:00 [INF] Protocolo enviado com sucesso: 00069
+2024-09-18 13:13:07.626 +00:00 [INF] Protocolo enviado com sucesso: 00070
+2024-09-18 13:13:07.626 +00:00 [INF] Protocolo enviado com sucesso: 00071
+2024-09-18 13:13:07.627 +00:00 [INF] Protocolo enviado com sucesso: 00072
+2024-09-18 13:13:07.627 +00:00 [INF] Protocolo enviado com sucesso: 00073
+2024-09-18 13:13:07.627 +00:00 [INF] Protocolo enviado com sucesso: 00074
+2024-09-18 13:13:07.628 +00:00 [INF] Protocolo enviado com sucesso: 00075
+2024-09-18 13:13:07.628 +00:00 [INF] Protocolo enviado com sucesso: 00076
+2024-09-18 13:13:07.628 +00:00 [INF] Protocolo enviado com sucesso: 00077
+2024-09-18 13:13:07.629 +00:00 [INF] Protocolo enviado com sucesso: 00078
+2024-09-18 13:13:07.629 +00:00 [INF] Protocolo enviado com sucesso: 00079
+2024-09-18 13:13:07.629 +00:00 [INF] Protocolo enviado com sucesso: 00080
+2024-09-18 13:13:07.629 +00:00 [INF] Protocolo enviado com sucesso: 00081
+2024-09-18 13:13:07.629 +00:00 [INF] Protocolo enviado com sucesso: 00082
+2024-09-18 13:13:07.630 +00:00 [INF] Protocolo enviado com sucesso: 00083
+2024-09-18 13:13:07.630 +00:00 [INF] Protocolo enviado com sucesso: 00084
+2024-09-18 13:13:07.630 +00:00 [INF] Protocolo enviado com sucesso: 00085
+2024-09-18 13:13:07.630 +00:00 [INF] Protocolo enviado com sucesso: 00086
+2024-09-18 13:13:07.631 +00:00 [INF] Protocolo enviado com sucesso: 00087
+2024-09-18 13:13:07.631 +00:00 [INF] Protocolo enviado com sucesso: 00088
+2024-09-18 13:13:07.631 +00:00 [INF] Protocolo enviado com sucesso: 00089
+2024-09-18 13:13:07.631 +00:00 [INF] Protocolo enviado com sucesso: 00090
+2024-09-18 13:13:07.632 +00:00 [INF] Protocolo enviado com sucesso: 00001
+2024-09-18 13:13:07.632 +00:00 [INF] Protocolo enviado com sucesso: 00001
+2024-09-18 13:13:07.632 +00:00 [INF] Protocolo enviado com sucesso: 00001
+2024-09-18 13:13:07.633 +00:00 [INF] Protocolo enviado com sucesso: 00001
+2024-09-18 13:13:07.633 +00:00 [INF] Protocolo enviado com sucesso: 00001
+2024-09-18 13:13:07.633 +00:00 [INF] Protocolo enviado com sucesso: 00096
+2024-09-18 13:13:07.634 +00:00 [INF] Protocolo enviado com sucesso: 00097
+2024-09-18 13:13:07.634 +00:00 [INF] Protocolo enviado com sucesso: 00098
+2024-09-18 13:13:07.634 +00:00 [INF] Protocolo enviado com sucesso: 00099
+2024-09-18 13:13:07.634 +00:00 [INF] Protocolo enviado com sucesso: 00100
+2024-09-18 13:13:07.635 +00:00 [INF] Protocolo enviado com sucesso: 00101
+2024-09-18 13:13:07.635 +00:00 [INF] Protocolo enviado com sucesso: 00102
+2024-09-18 13:13:07.635 +00:00 [INF] Protocolo enviado com sucesso: 00103
+2024-09-18 13:13:07.636 +00:00 [INF] Protocolo enviado com sucesso: 00103
+2024-09-18 13:13:07.636 +00:00 [INF] Protocolo enviado com sucesso: 00104
+2024-09-18 13:13:07.636 +00:00 [INF] Protocolo enviado com sucesso: 00105
+2024-09-18 16:24:35.041 +00:00 [INF] Iniciando aplicação ProtocolPublisher
+2024-09-18 16:24:37.837 +00:00 [ERR] Falha na conexão com RabbitMQ. Tentando novamente... 4 tentativas restantes.
+RabbitMQ.Client.Exceptions.BrokerUnreachableException: None of the specified endpoints were reachable
+ ---> System.AggregateException: One or more errors occurred. (Connection failed)
+ ---> RabbitMQ.Client.Exceptions.ConnectFailureException: Connection failed
+ ---> System.Net.Sockets.SocketException (111): Connection refused
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at RabbitMQ.Client.TcpClientAdapter.ConnectAsync(String host, Int32 port)
+   at RabbitMQ.Client.Impl.TaskExtensions.TimeoutAfter(Task task, TimeSpan timeout)
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectOrFail(ITcpClient socket, AmqpTcpEndpoint endpoint, TimeSpan timeout)
+   --- End of inner exception stack trace ---
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectOrFail(ITcpClient socket, AmqpTcpEndpoint endpoint, TimeSpan timeout)
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectUsingAddressFamily(AmqpTcpEndpoint endpoint, Func`2 socketFactory, TimeSpan timeout, AddressFamily family)
+   at RabbitMQ.Client.Impl.SocketFrameHandler..ctor(AmqpTcpEndpoint endpoint, Func`2 socketFactory, TimeSpan connectionTimeout, TimeSpan readTimeout, TimeSpan writeTimeout)
+   at RabbitMQ.Client.ConnectionFactory.CreateFrameHandler(AmqpTcpEndpoint endpoint)
+   at RabbitMQ.Client.EndpointResolverExtensions.SelectOne[T](IEndpointResolver resolver, Func`2 selector)
+   --- End of inner exception stack trace ---
+   at RabbitMQ.Client.EndpointResolverExtensions.SelectOne[T](IEndpointResolver resolver, Func`2 selector)
+   at RabbitMQ.Client.Framing.Impl.AutorecoveringConnection.Init(IEndpointResolver endpoints)
+   at RabbitMQ.Client.ConnectionFactory.CreateConnection(IEndpointResolver endpointResolver, String clientProvidedName)
+   --- End of inner exception stack trace ---
+   at RabbitMQ.Client.ConnectionFactory.CreateConnection(IEndpointResolver endpointResolver, String clientProvidedName)
+   at ProtocolPublisher.Services.ProtocolPublisherService.PublishProtocols(List`1 protocolos) in E:\Repos\PROJETOS\protocolreceptionsolution\ProtocolPublisher\Services\ProtocolPublisherService.cs:line 30
+2024-09-18 16:24:43.023 +00:00 [ERR] Falha na conexão com RabbitMQ. Tentando novamente... 3 tentativas restantes.
+RabbitMQ.Client.Exceptions.BrokerUnreachableException: None of the specified endpoints were reachable
+ ---> System.AggregateException: One or more errors occurred. (Connection failed)
+ ---> RabbitMQ.Client.Exceptions.ConnectFailureException: Connection failed
+ ---> System.Net.Sockets.SocketException (111): Connection refused
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at RabbitMQ.Client.TcpClientAdapter.ConnectAsync(String host, Int32 port)
+   at RabbitMQ.Client.Impl.TaskExtensions.TimeoutAfter(Task task, TimeSpan timeout)
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectOrFail(ITcpClient socket, AmqpTcpEndpoint endpoint, TimeSpan timeout)
+   --- End of inner exception stack trace ---
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectOrFail(ITcpClient socket, AmqpTcpEndpoint endpoint, TimeSpan timeout)
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectUsingAddressFamily(AmqpTcpEndpoint endpoint, Func`2 socketFactory, TimeSpan timeout, AddressFamily family)
+   at RabbitMQ.Client.Impl.SocketFrameHandler..ctor(AmqpTcpEndpoint endpoint, Func`2 socketFactory, TimeSpan connectionTimeout, TimeSpan readTimeout, TimeSpan writeTimeout)
+   at RabbitMQ.Client.ConnectionFactory.CreateFrameHandler(AmqpTcpEndpoint endpoint)
+   at RabbitMQ.Client.EndpointResolverExtensions.SelectOne[T](IEndpointResolver resolver, Func`2 selector)
+   --- End of inner exception stack trace ---
+   at RabbitMQ.Client.EndpointResolverExtensions.SelectOne[T](IEndpointResolver resolver, Func`2 selector)
+   at RabbitMQ.Client.Framing.Impl.AutorecoveringConnection.Init(IEndpointResolver endpoints)
+   at RabbitMQ.Client.ConnectionFactory.CreateConnection(IEndpointResolver endpointResolver, String clientProvidedName)
+   --- End of inner exception stack trace ---
+   at RabbitMQ.Client.ConnectionFactory.CreateConnection(IEndpointResolver endpointResolver, String clientProvidedName)
+   at ProtocolPublisher.Services.ProtocolPublisherService.PublishProtocols(List`1 protocolos) in E:\Repos\PROJETOS\protocolreceptionsolution\ProtocolPublisher\Services\ProtocolPublisherService.cs:line 30
+2024-09-18 16:24:48.060 +00:00 [ERR] Falha na conexão com RabbitMQ. Tentando novamente... 2 tentativas restantes.
+RabbitMQ.Client.Exceptions.BrokerUnreachableException: None of the specified endpoints were reachable
+ ---> System.AggregateException: One or more errors occurred. (Connection failed)
+ ---> RabbitMQ.Client.Exceptions.ConnectFailureException: Connection failed
+ ---> System.Net.Sockets.SocketException (111): Connection refused
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at RabbitMQ.Client.TcpClientAdapter.ConnectAsync(String host, Int32 port)
+   at RabbitMQ.Client.Impl.TaskExtensions.TimeoutAfter(Task task, TimeSpan timeout)
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectOrFail(ITcpClient socket, AmqpTcpEndpoint endpoint, TimeSpan timeout)
+   --- End of inner exception stack trace ---
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectOrFail(ITcpClient socket, AmqpTcpEndpoint endpoint, TimeSpan timeout)
+   at RabbitMQ.Client.Impl.SocketFrameHandler.ConnectUsingAddressFamily(AmqpTcpEndpoint endpoint, Func`2 socketFactory, TimeSpan timeout, AddressFamily family)
+   at RabbitMQ.Client.Impl.SocketFrameHandler..ctor(AmqpTcpEndpoint endpoint, Func`2 socketFactory, TimeSpan connectionTimeout, TimeSpan readTimeout, TimeSpan writeTimeout)
+   at RabbitMQ.Client.ConnectionFactory.CreateFrameHandler(AmqpTcpEndpoint endpoint)
+   at RabbitMQ.Client.EndpointResolverExtensions.SelectOne[T](IEndpointResolver resolver, Func`2 selector)
+   --- End of inner exception stack trace ---
+   at RabbitMQ.Client.EndpointResolverExtensions.SelectOne[T](IEndpointResolver resolver, Func`2 selector)
+   at RabbitMQ.Client.Framing.Impl.AutorecoveringConnection.Init(IEndpointResolver endpoints)
+   at RabbitMQ.Client.ConnectionFactory.CreateConnection(IEndpointResolver endpointResolver, String clientProvidedName)
+   --- End of inner exception stack trace ---
+   at RabbitMQ.Client.ConnectionFactory.CreateConnection(IEndpointResolver endpointResolver, String clientProvidedName)
+   at ProtocolPublisher.Services.ProtocolPublisherService.PublishProtocols(List`1 protocolos) in E:\Repos\PROJETOS\protocolreceptionsolution\ProtocolPublisher\Services\ProtocolPublisherService.cs:line 30
+2024-09-18 16:24:53.414 +00:00 [INF] Protocolo enviado com sucesso: 00001
+2024-09-18 16:24:53.417 +00:00 [INF] Protocolo enviado com sucesso: 00106
+2024-09-18 16:24:53.418 +00:00 [INF] Protocolo enviado com sucesso: 00116
+2024-09-18 16:24:53.423 +00:00 [INF] Protocolo enviado com sucesso: 00002
+2024-09-18 16:24:53.425 +00:00 [INF] Protocolo enviado com sucesso: 00107
+2024-09-18 16:24:53.427 +00:00 [INF] Protocolo enviado com sucesso: 00117
+2024-09-18 16:24:53.434 +00:00 [INF] Protocolo enviado com sucesso: 00003
+2024-09-18 16:24:53.434 +00:00 [INF] Protocolo enviado com sucesso: 00108
+2024-09-18 16:24:53.437 +00:00 [INF] Protocolo enviado com sucesso: 00118
+2024-09-18 16:24:53.438 +00:00 [INF] Protocolo enviado com sucesso: 00004
+2024-09-18 16:24:53.439 +00:00 [INF] Protocolo enviado com sucesso: 00109
+2024-09-18 16:24:53.441 +00:00 [INF] Protocolo enviado com sucesso: 00119
+2024-09-18 16:24:53.447 +00:00 [INF] Protocolo enviado com sucesso: 00005
+2024-09-18 16:24:53.448 +00:00 [INF] Protocolo enviado com sucesso: 00110
+2024-09-18 16:24:53.449 +00:00 [INF] Protocolo enviado com sucesso: 00120
+2024-09-18 16:24:53.462 +00:00 [INF] Protocolo enviado com sucesso: 00006
+2024-09-18 16:24:53.463 +00:00 [INF] Protocolo enviado com sucesso: 00111
+2024-09-18 16:24:53.470 +00:00 [INF] Protocolo enviado com sucesso: 00121
+2024-09-18 16:24:53.471 +00:00 [INF] Protocolo enviado com sucesso: 00007
+2024-09-18 16:24:53.472 +00:00 [INF] Protocolo enviado com sucesso: 00112
+2024-09-18 16:24:53.473 +00:00 [INF] Protocolo enviado com sucesso: 00122
+2024-09-18 16:24:53.477 +00:00 [INF] Protocolo enviado com sucesso: 00008
+2024-09-18 16:24:53.478 +00:00 [INF] Protocolo enviado com sucesso: 00113
+2024-09-18 16:24:53.481 +00:00 [INF] Protocolo enviado com sucesso: 00123
+2024-09-18 16:24:53.482 +00:00 [INF] Protocolo enviado com sucesso: 00009
+2024-09-18 16:24:53.491 +00:00 [INF] Protocolo enviado com sucesso: 00114
+2024-09-18 16:24:53.497 +00:00 [INF] Protocolo enviado com sucesso: 00124
+2024-09-18 16:24:53.501 +00:00 [INF] Protocolo enviado com sucesso: 00010
+2024-09-18 16:24:53.502 +00:00 [INF] Protocolo enviado com sucesso: 00115
+2024-09-18 16:24:53.505 +00:00 [INF] Protocolo enviado com sucesso: 00125
+2024-09-18 16:24:53.511 +00:00 [INF] Protocolo enviado com sucesso: 00011
+2024-09-18 16:24:53.514 +00:00 [INF] Protocolo enviado com sucesso: 00012
+2024-09-18 16:24:53.516 +00:00 [INF] Protocolo enviado com sucesso: 00013
+2024-09-18 16:24:53.523 +00:00 [INF] Protocolo enviado com sucesso: 00014
+2024-09-18 16:24:53.525 +00:00 [INF] Protocolo enviado com sucesso: 00015
+2024-09-18 16:24:53.530 +00:00 [INF] Protocolo enviado com sucesso: 00016
+2024-09-18 16:24:53.534 +00:00 [INF] Protocolo enviado com sucesso: 00017
+2024-09-18 16:24:53.536 +00:00 [INF] Protocolo enviado com sucesso: 00018
+2024-09-18 16:24:53.538 +00:00 [INF] Protocolo enviado com sucesso: 00019
+2024-09-18 16:24:53.540 +00:00 [INF] Protocolo enviado com sucesso: 00020
+2024-09-18 16:24:53.552 +00:00 [INF] Protocolo enviado com sucesso: 00021
+2024-09-18 16:24:53.570 +00:00 [INF] Protocolo enviado com sucesso: 00022
+2024-09-18 16:24:53.577 +00:00 [INF] Protocolo enviado com sucesso: 00023
+2024-09-18 16:24:53.580 +00:00 [INF] Protocolo enviado com sucesso: 00024
+2024-09-18 16:24:53.584 +00:00 [INF] Protocolo enviado com sucesso: 00025
+2024-09-18 16:24:53.587 +00:00 [INF] Protocolo enviado com sucesso: 00026
+2024-09-18 16:24:53.593 +00:00 [INF] Protocolo enviado com sucesso: 00027
+2024-09-18 16:24:53.597 +00:00 [INF] Protocolo enviado com sucesso: 00028
+2024-09-18 16:24:53.598 +00:00 [INF] Protocolo enviado com sucesso: 00029
+2024-09-18 16:24:53.600 +00:00 [INF] Protocolo enviado com sucesso: 00030
+2024-09-18 16:24:53.601 +00:00 [INF] Protocolo enviado com sucesso: 00031
+2024-09-18 16:24:53.603 +00:00 [INF] Protocolo enviado com sucesso: 00032
+2024-09-18 16:24:53.604 +00:00 [INF] Protocolo enviado com sucesso: 00033
+2024-09-18 16:24:53.604 +00:00 [INF] Protocolo enviado com sucesso: 00034
+2024-09-18 16:24:53.605 +00:00 [INF] Protocolo enviado com sucesso: 00035
+2024-09-18 16:24:53.606 +00:00 [INF] Protocolo enviado com sucesso: 00036
+2024-09-18 16:24:53.618 +00:00 [INF] Protocolo enviado com sucesso: 00037
+2024-09-18 16:24:53.619 +00:00 [INF] Protocolo enviado com sucesso: 00038
+2024-09-18 16:24:53.619 +00:00 [INF] Protocolo enviado com sucesso: 00039
+2024-09-18 16:24:53.619 +00:00 [INF] Protocolo enviado com sucesso: 00040
+2024-09-18 16:24:53.623 +00:00 [INF] Protocolo enviado com sucesso: 00041
+2024-09-18 16:24:53.631 +00:00 [INF] Protocolo enviado com sucesso: 00042
+2024-09-18 16:24:53.634 +00:00 [INF] Protocolo enviado com sucesso: 00043
+2024-09-18 16:24:53.637 +00:00 [INF] Protocolo enviado com sucesso: 00044
+2024-09-18 16:24:53.639 +00:00 [INF] Protocolo enviado com sucesso: 00045
+2024-09-18 16:24:53.644 +00:00 [INF] Protocolo enviado com sucesso: 00046
+2024-09-18 16:24:53.646 +00:00 [INF] Protocolo enviado com sucesso: 00047
+2024-09-18 16:24:53.646 +00:00 [INF] Protocolo enviado com sucesso: 00048
+2024-09-18 16:24:53.647 +00:00 [INF] Protocolo enviado com sucesso: 00049
+2024-09-18 16:24:53.647 +00:00 [INF] Protocolo enviado com sucesso: 00050
+2024-09-18 16:24:53.647 +00:00 [INF] Protocolo enviado com sucesso: 00051
+2024-09-18 16:24:53.648 +00:00 [INF] Protocolo enviado com sucesso: 00052
+2024-09-18 16:24:53.648 +00:00 [INF] Protocolo enviado com sucesso: 00053
+2024-09-18 16:24:53.649 +00:00 [INF] Protocolo enviado com sucesso: 00054
+2024-09-18 16:24:53.651 +00:00 [INF] Protocolo enviado com sucesso: 00055
+2024-09-18 16:24:53.664 +00:00 [INF] Protocolo enviado com sucesso: 00056
+2024-09-18 16:24:53.670 +00:00 [INF] Protocolo enviado com sucesso: 00057
+2024-09-18 16:24:53.671 +00:00 [INF] Protocolo enviado com sucesso: 00058
+2024-09-18 16:24:53.675 +00:00 [INF] Protocolo enviado com sucesso: 00059
+2024-09-18 16:24:53.676 +00:00 [INF] Protocolo enviado com sucesso: 00060
+2024-09-18 16:24:53.676 +00:00 [INF] Protocolo enviado com sucesso: 00061
+2024-09-18 16:24:53.677 +00:00 [INF] Protocolo enviado com sucesso: 00062
+2024-09-18 16:24:53.677 +00:00 [INF] Protocolo enviado com sucesso: 00063
+2024-09-18 16:24:53.677 +00:00 [INF] Protocolo enviado com sucesso: 00064
+2024-09-18 16:24:53.678 +00:00 [INF] Protocolo enviado com sucesso: 00065
+2024-09-18 16:24:53.678 +00:00 [INF] Protocolo enviado com sucesso: 00066
+2024-09-18 16:24:53.678 +00:00 [INF] Protocolo enviado com sucesso: 00067
+2024-09-18 16:24:53.679 +00:00 [INF] Protocolo enviado com sucesso: 00068
+2024-09-18 16:24:53.679 +00:00 [INF] Protocolo enviado com sucesso: 00069
+2024-09-18 16:24:53.680 +00:00 [INF] Protocolo enviado com sucesso: 00070
+2024-09-18 16:24:53.685 +00:00 [INF] Protocolo enviado com sucesso: 00071
+2024-09-18 16:24:53.686 +00:00 [INF] Protocolo enviado com sucesso: 00072
+2024-09-18 16:24:53.687 +00:00 [INF] Protocolo enviado com sucesso: 00073
+2024-09-18 16:24:53.689 +00:00 [INF] Protocolo enviado com sucesso: 00074
+2024-09-18 16:24:53.692 +00:00 [INF] Protocolo enviado com sucesso: 00075
+2024-09-18 16:24:53.693 +00:00 [INF] Protocolo enviado com sucesso: 00076
+2024-09-18 16:24:53.693 +00:00 [INF] Protocolo enviado com sucesso: 00077
+2024-09-18 16:24:53.695 +00:00 [INF] Protocolo enviado com sucesso: 00078
+2024-09-18 16:24:53.696 +00:00 [INF] Protocolo enviado com sucesso: 00079
+2024-09-18 16:24:53.698 +00:00 [INF] Protocolo enviado com sucesso: 00080
+2024-09-18 16:24:53.699 +00:00 [INF] Protocolo enviado com sucesso: 00081
+2024-09-18 16:24:53.700 +00:00 [INF] Protocolo enviado com sucesso: 00082
+2024-09-18 16:24:53.701 +00:00 [INF] Protocolo enviado com sucesso: 00083
+2024-09-18 16:24:53.703 +00:00 [INF] Protocolo enviado com sucesso: 00084
+2024-09-18 16:24:53.703 +00:00 [INF] Protocolo enviado com sucesso: 00085
+2024-09-18 16:24:53.704 +00:00 [INF] Protocolo enviado com sucesso: 00086
+2024-09-18 16:24:53.704 +00:00 [INF] Protocolo enviado com sucesso: 00087
+2024-09-18 16:24:53.705 +00:00 [INF] Protocolo enviado com sucesso: 00088
+2024-09-18 16:24:53.706 +00:00 [INF] Protocolo enviado com sucesso: 00089
+2024-09-18 16:24:53.710 +00:00 [INF] Protocolo enviado com sucesso: 00090
+2024-09-18 16:24:53.711 +00:00 [INF] Protocolo enviado com sucesso: 00001
+2024-09-18 16:24:53.716 +00:00 [INF] Protocolo enviado com sucesso: 00001
+2024-09-18 16:24:53.721 +00:00 [INF] Protocolo enviado com sucesso: 00001
+2024-09-18 16:24:53.721 +00:00 [INF] Protocolo enviado com sucesso: 00001
+2024-09-18 16:24:53.724 +00:00 [INF] Protocolo enviado com sucesso: 00001
+2024-09-18 16:24:53.725 +00:00 [INF] Protocolo enviado com sucesso: 00096
+2024-09-18 16:24:53.726 +00:00 [INF] Protocolo enviado com sucesso: 00097
+2024-09-18 16:24:53.728 +00:00 [INF] Protocolo enviado com sucesso: 00098
+2024-09-18 16:24:53.737 +00:00 [INF] Protocolo enviado com sucesso: 00099
+2024-09-18 16:24:53.738 +00:00 [INF] Protocolo enviado com sucesso: 00100
+2024-09-18 16:24:53.743 +00:00 [INF] Protocolo enviado com sucesso: 00101
+2024-09-18 16:24:53.744 +00:00 [INF] Protocolo enviado com sucesso: 00102
+2024-09-18 16:24:53.745 +00:00 [INF] Protocolo enviado com sucesso: 00103
+2024-09-18 16:24:53.746 +00:00 [INF] Protocolo enviado com sucesso: 00103
+2024-09-18 16:24:53.746 +00:00 [INF] Protocolo enviado com sucesso: 00104
+2024-09-18 16:24:53.747 +00:00 [INF] Protocolo enviado com sucesso: 00105
